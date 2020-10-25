@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Obfuscape"
+run/main_scene="res://src/Elements/NumberButton.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameData="res://src/GameData.tscn"
+PromptData="*res://src/PromptData.gd"
 
 [rendering]
 
