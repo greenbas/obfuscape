@@ -1,11 +1,14 @@
-extends Node
+extends Node2D
 
-
+onready var gData = get_node("/root/PromptData")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-export var promptData = {"desired_res": false,"game_type":"arithmetic","prompt_data":{"question":"2+7=","L":2,"R":9}}
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(gData.promptData.prompt_data)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
