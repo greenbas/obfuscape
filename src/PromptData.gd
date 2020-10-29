@@ -5,7 +5,22 @@ extends Node
 # var a = 2
 # var b = "text"
 
-export var promptData = {"desired_res": false,"game_type":"arithmetic","prompt_data":{"question":"2+7=","L":2,"R":9}}
+
+export var promptData : Dictionary = {
+	"desired_flag": false,
+	"game_type":"arithmetic",
+	"prompt_data": {
+		"question":"2+7=",
+		"L": { 
+			"val":"2",
+			"flag":false
+		},
+		"R": {
+			"val":"9",
+			"flag":true
+		}
+	}
+}
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
