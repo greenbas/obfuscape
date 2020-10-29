@@ -22,6 +22,8 @@ export var promptData : Dictionary = {
 	}
 }
 
+func xnor(a : bool,b: bool) -> bool: return (a && b) || (!a && !b) 
+func xor(a: bool,b:bool) -> bool: return !xnor(a,b)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
