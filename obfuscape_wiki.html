@@ -221,6 +221,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/BrowserStorage/Enabled</li>
+
 <li>$:/core</li>
 
 <li>$:/Import</li>
@@ -276,6 +278,10 @@ Error message and password prompt
 <li>$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/themes/tiddlywiki/centralised</li>
 
 <li>$:/state/importpreviewtype</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage--324194473</li>
 
 <li>$:/state/plugin-info-1089825214-$:/plugins/tiddlywiki/browser-storage</li>
 
@@ -513,9 +519,7 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>Draft of '$:/Import'</li>
-
-<li>Draft of 'New Tiddler'</li>
+<li>Gameplay Loop</li>
 
 <li>New Tiddler 1</li>
 
@@ -537,6 +541,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20201027220123515" modified="20201027220123515" title="$:/config/BrowserStorage/Enabled">
+<pre>yes</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9910,10 +9917,10 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20201026171519829" modified="20201026171523994" status="complete" title="$:/Import">
+<div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[SyfFKj2rKt3CoKnELR1Io4ZDoSa70000[1\]]]</pre>
+# [[temp.svg]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10557,6 +10564,12 @@ Error message and password prompt
 <div created="20201026171448182" modified="20201026171449727" title="$:/state/importpreviewtype">
 <pre>$:/core/ui/ImportPreviews/Text</pre>
 </div>
+<div created="20201027220110780" modified="20201027220110780" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage">
+<pre>yes</pre>
+</div>
+<div created="20201027220116790" modified="20201027220325907" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/browser-storage--324194473">
+<pre>readme</pre>
+</div>
 <div created="20201026030515822" modified="20201026030515822" title="$:/state/plugin-info-1089825214-$:/plugins/tiddlywiki/browser-storage">
 <pre>no</pre>
 </div>
@@ -10578,19 +10591,19 @@ Error message and password prompt
 <div created="20201026030313848" modified="20201026030315977" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
 </div>
-<div created="20201026025624878" modified="20201026171416133" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20201026025624878" modified="20201027220104861" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20201026011031140" modified="20201026165823853" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
-<div created="20201026011025422" modified="20201026171419246" title="$:/state/tab/sidebar--595412856">
+<div created="20201026011025422" modified="20201027220439052" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201026171413272" list="SyfFKj2rKt3CoKnELR1Io4ZDoSa70000 [[Draft of '$:/Import']] $:/ControlPanel [[New Tiddler 1]] [[Draft of 'New Tiddler']] GettingStarted" modified="20201026171539381" title="$:/StoryList">
+<div created="20201027220031926" list="$:/Import [[Gameplay Loop]] $:/temp/BrowserStorage/Log GettingStarted" modified="20201029011015115" title="$:/StoryList">
 <pre></pre>
 </div>
 <div title="$:/temp/BrowserStorage/Log">
@@ -11604,8 +11617,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20201026170038706" modified="20201026170042842" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>markdow</pre>
 </div>
-<div created="20201026171537558" modified="20201026171537558" title="$:/temp/search">
-<pre>SyfFKj2rKt3CoKnELR1Io4ZDoSa70000[1]</pre>
+<div created="20201026171537558" modified="20201027220026309" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20201026170045845" modified="20201026170045845" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -11719,13 +11732,30 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
-<div created="20201026171519829" draft.of="$:/Import" draft.title="$:/Import" modified="20201026171529203" status="complete" title="Draft of '$:/Import'">
-<pre>The following tiddlers were imported:
+<div created="20201029011032576" modified="20201029011037323" title="Gameplay Loop" type="image/svg+xml">
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; contentScriptType=&quot;application/ecmascript&quot; contentStyleType=&quot;text/css&quot; height=&quot;296px&quot; preserveAspectRatio=&quot;none&quot; style=&quot;width:465px;height:296px;&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 465 296&quot; width=&quot;465px&quot; zoomAndPan=&quot;magnify&quot;&gt;&lt;defs&gt;&lt;filter height=&quot;300%&quot; id=&quot;f9sanavg1vq31&quot; width=&quot;300%&quot; x=&quot;-1&quot; y=&quot;-1&quot;&gt;&lt;feGaussianBlur result=&quot;blurOut&quot; stdDeviation=&quot;2.0&quot;/&gt;&lt;feColorMatrix in=&quot;blurOut&quot; result=&quot;blurOut2&quot; type=&quot;matrix&quot; values=&quot;0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0&quot;/&gt;&lt;feOffset dx=&quot;4.0&quot; dy=&quot;4.0&quot; in=&quot;blurOut2&quot; result=&quot;blurOut3&quot;/&gt;&lt;feBlend in=&quot;SourceGraphic&quot; in2=&quot;blurOut3&quot; mode=&quot;normal&quot;/&gt;&lt;/filter&gt;&lt;/defs&gt;&lt;g&gt;&lt;ellipse cx=&quot;251.5&quot; cy=&quot;20&quot; fill=&quot;#000000&quot; filter=&quot;url(#f9sanavg1vq31)&quot; rx=&quot;10&quot; ry=&quot;10&quot; style=&quot;stroke: none; stroke-width: 1.0;&quot;/&gt;&lt;rect fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; height=&quot;33.9688&quot; rx=&quot;12.5&quot; ry=&quot;12.5&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; width=&quot;221&quot; x=&quot;141&quot; y=&quot;110.8047&quot;/&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;12&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;201&quot; x=&quot;151&quot; y=&quot;131.9434&quot;&gt;Generate PuzzlePrompt for Player&lt;/text&gt;&lt;polygon fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; points=&quot;139.5,164.7734,363.5,164.7734,375.5,176.7734,363.5,188.7734,139.5,188.7734,127.5,176.7734,139.5,164.7734&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot;/&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;224&quot; x=&quot;139.5&quot; y=&quot;180.5815&quot;&gt;Did the user accomplish the objective?&lt;/text&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;21&quot; x=&quot;106.5&quot; y=&quot;174.1792&quot;&gt;yes&lt;/text&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;14&quot; x=&quot;375.5&quot; y=&quot;174.1792&quot;&gt;no&lt;/text&gt;&lt;rect fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; height=&quot;33.9688&quot; rx=&quot;12.5&quot; ry=&quot;12.5&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; width=&quot;145&quot; x=&quot;45&quot; y=&quot;198.7734&quot;/&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;12&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;125&quot; x=&quot;55&quot; y=&quot;219.9121&quot;&gt;give the user a point&lt;/text&gt;&lt;rect fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; height=&quot;33.9688&quot; rx=&quot;12.5&quot; ry=&quot;12.5&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; width=&quot;79&quot; x=&quot;346&quot; y=&quot;198.7734&quot;/&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;12&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;59&quot; x=&quot;356&quot; y=&quot;219.9121&quot;&gt;lose a life&lt;/text&gt;&lt;polygon fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; points=&quot;251.5,238.7422,263.5,250.7422,251.5,262.7422,239.5,250.7422,251.5,238.7422&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot;/&gt;&lt;polygon fill=&quot;#FEFECE&quot; filter=&quot;url(#f9sanavg1vq31)&quot; points=&quot;157,50,346,50,358,62,346,74,157,74,145,62,157,50&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot;/&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;21&quot; x=&quot;255.5&quot; y=&quot;84.2104&quot;&gt;yes&lt;/text&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;189&quot; x=&quot;157&quot; y=&quot;65.8081&quot;&gt;Player has more than zero lives?&lt;/text&gt;&lt;text fill=&quot;#000000&quot; font-family=&quot;sans-serif&quot; font-size=&quot;11&quot; lengthAdjust=&quot;spacingAndGlyphs&quot; textLength=&quot;14&quot; x=&quot;131&quot; y=&quot;59.4058&quot;&gt;no&lt;/text&gt;&lt;ellipse cx=&quot;24&quot; cy=&quot;109&quot; fill=&quot;#FFFFFF&quot; filter=&quot;url(#f9sanavg1vq31)&quot; rx=&quot;11&quot; ry=&quot;11&quot; style=&quot;stroke: #000000; stroke-width: 1.0;&quot;/&gt;&lt;ellipse cx=&quot;24&quot; cy=&quot;109&quot; fill=&quot;#000000&quot; rx=&quot;6&quot; ry=&quot;6&quot; style=&quot;stroke: #7F7F7F; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;127.5&quot; x2=&quot;117.5&quot; y1=&quot;176.7734&quot; y2=&quot;176.7734&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;117.5&quot; x2=&quot;117.5&quot; y1=&quot;176.7734&quot; y2=&quot;198.7734&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;113.5,188.7734,117.5,198.7734,121.5,188.7734,117.5,192.7734&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;375.5&quot; x2=&quot;385.5&quot; y1=&quot;176.7734&quot; y2=&quot;176.7734&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;385.5&quot; x2=&quot;385.5&quot; y1=&quot;176.7734&quot; y2=&quot;198.7734&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;381.5,188.7734,385.5,198.7734,389.5,188.7734,385.5,192.7734&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;117.5&quot; x2=&quot;117.5&quot; y1=&quot;232.7422&quot; y2=&quot;250.7422&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;117.5&quot; x2=&quot;239.5&quot; y1=&quot;250.7422&quot; y2=&quot;250.7422&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;229.5,246.7422,239.5,250.7422,229.5,254.7422,233.5,250.7422&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;385.5&quot; x2=&quot;385.5&quot; y1=&quot;232.7422&quot; y2=&quot;250.7422&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;385.5&quot; x2=&quot;263.5&quot; y1=&quot;250.7422&quot; y2=&quot;250.7422&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;273.5,246.7422,263.5,250.7422,273.5,254.7422,269.5,250.7422&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;251.5&quot; x2=&quot;251.5&quot; y1=&quot;144.7734&quot; y2=&quot;164.7734&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;247.5,154.7734,251.5,164.7734,255.5,154.7734,251.5,158.7734&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;251.5&quot; x2=&quot;251.5&quot; y1=&quot;74&quot; y2=&quot;110.8047&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;247.5,100.8047,251.5,110.8047,255.5,100.8047,251.5,104.8047&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;251.5&quot; x2=&quot;251.5&quot; y1=&quot;262.7422&quot; y2=&quot;272.7422&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;251.5&quot; x2=&quot;439&quot; y1=&quot;272.7422&quot; y2=&quot;272.7422&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;435,170.8711,439,160.8711,443,170.8711,439,166.8711&quot; style=&quot;stroke: #A80036; stroke-width: 1.5;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;439&quot; x2=&quot;439&quot; y1=&quot;62&quot; y2=&quot;272.7422&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;439&quot; x2=&quot;358&quot; y1=&quot;62&quot; y2=&quot;62&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;368,58,358,62,368,66,364,62&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;145&quot; x2=&quot;24&quot; y1=&quot;62&quot; y2=&quot;62&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;24&quot; x2=&quot;24&quot; y1=&quot;62&quot; y2=&quot;98&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;20,88,24,98,28,88,24,92&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;line style=&quot;stroke: #A80036; stroke-width: 1.5;&quot; x1=&quot;251.5&quot; x2=&quot;251.5&quot; y1=&quot;30&quot; y2=&quot;50&quot;/&gt;&lt;polygon fill=&quot;#A80036&quot; points=&quot;247.5,40,251.5,50,255.5,40,251.5,44&quot; style=&quot;stroke: #A80036; stroke-width: 1.0;&quot;/&gt;&lt;!--MD5=[bb74955e768d20956399ea8ffb18b50f]
+@startuml
+!pragma useVerticalIf on
+start
+while (Player has more than zero lives?) is (yes)
+  :Generate PuzzlePrompt for Player;
+  if (Did the user accomplish the objective?) then (yes)
+    :give the user a point;
+  else (no)
+    :lose a life;
+  endif
+endwhile (no)
+stop
+@enduml
 
-# [[SyfFKj2rKt3CoKnELR1Io4ZDoSa70000[1]]]</pre>
-</div>
-<div created="20201026170207041" draft.of="New Tiddler" draft.title="New Tiddler" modified="20201026170212582" tags="" title="Draft of 'New Tiddler'">
-<pre></pre>
+PlantUML version 1.2020.20beta7(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
 <div created="20201026170224745" modified="20201026170403815" tags="" title="New Tiddler 1" type="text/x-markdown">
 <pre>    asdf
