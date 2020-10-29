@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-onready var QuestionData = get_node("/root/PromptData")
+onready var Globals = get_node("/root/globals")
 
 onready var QuestionLabel = get_node("Question")
 
@@ -23,11 +23,24 @@ onready var AnswerR = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var pData = QuestionData.promptData.prompt_data
+	var pData = Globals.promptData.prompt_data
 	QuestionLabel.text = pData.question
 	AnswerL.text.text = str(pData.L.val)
+	AnswerL.elem.isDesiredResult = pData.L.flag
 	AnswerR.text.text = str(pData.R.val)
+	AnswerR.elem.isDesiredResult = pData.R.flag
+	AnswerL.elem.connect("answer_ready",self,"_on_player_answer")
+	AnswerR.elem.connect("answer_ready",self,"_on_player_answer")
 
+signal player_complete(result)
+
+func _on_player_answer(value):
+	print(value)
+	var f1 = value && Globals.promptData.desired_flag
+	var f2 = !value && !Globals.promptData.desired_flag
+	print(f1 || f2)
+	emit_signal("player_complete",f1 || f2)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
