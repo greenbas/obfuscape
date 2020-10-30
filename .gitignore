@@ -10,3 +10,4 @@ export_presets.cfg
 data_*/
 
 update_wiki.sh
+update_wiki.bat
