@@ -1,16 +1,15 @@
 extends QueryGenerator
 
 enum {ADD,SUB,MUL,DIV}
-var operators = {ADD:'+',SUB:'-',MUL:'*','DIV':'/'}
+var operators = {ADD:'+',SUB:'-',MUL:'*',DIV:'/'}
 
 func generate_false_answer(x : int) -> int:
-	var offset = rng.randi(0,19)
+	var offset = rng.randi_range(0,19)
 	#ensure false_res is never offset by 0
 	if(offset < 10):
 		return x + offset - 10
 	else: 
 		return x + offset - 9
-
 
 func _init():
 	set_game_type(game_types.ARITHMETIC)
@@ -28,7 +27,7 @@ func generate_query():
 		ADD:
 			res = op1 + op2
 		SUB:
-			res = op1 + op2
+			res = op1 - op2
 		MUL:
 			res = op1 * op2
 		DIV:
@@ -37,7 +36,6 @@ func generate_query():
 			op1 = op2 * res
 	false_res = generate_false_answer(res)
 	var coin_flip = bool(rng.randi_range(0,255) | 1)
-	globals.promptData["game_type"] = game_types.ARITHMETIC
 	query_data = {
 		"desired_flag": globals.promptData.desired_flag,
 		"game_type": get_game_type(),

@@ -5,6 +5,7 @@ var type : String = "GenericGame" setget set_game_type, get_game_type
 
 var g = globals
 var GameData = g.promptData
+onready var game_timer = get_node("Timer")
 
 func set_game_type(value:String): type = value
 
@@ -23,4 +24,6 @@ func _ready():
 
 
 func _on_Timer_timeout():
+	print("TIMEOUT")
+	game_timer.stop();
 	emit_signal("player_complete",false)

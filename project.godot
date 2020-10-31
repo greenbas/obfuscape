@@ -27,12 +27,17 @@ _global_script_class_icons={
 [application]
 
 config/name="Obfuscape"
-run/main_scene="res://src/Elements/NumberButton.tscn"
+run/main_scene="res://src/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 globals="*res://src/globals.gd"
+
+[display]
+
+window/size/width=800
+window/stretch/aspect="keep"
 
 [rendering]
 

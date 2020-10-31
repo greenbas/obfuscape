@@ -17,7 +17,7 @@ func _on_query_requested(value):
 	if value != game_type:
 		pass
 	else:
-		call("generate_query")
+		call_deferred("generate_query")
 		yield(self,"call_finished")
 		g.promptData = query_data
 		emit_signal("query_generated")

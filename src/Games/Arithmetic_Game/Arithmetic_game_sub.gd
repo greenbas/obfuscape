@@ -26,11 +26,12 @@ func _ready():
 	AnswerR.set_correctness(pData.R.flag)
 	AnswerL.connect("answer_ready",self,"_on_player_answer")
 	AnswerR.connect("answer_ready",self,"_on_player_answer")
+	game_timer.start(3.0)
 
 
 func _on_player_answer(value):
 	emit_signal("player_complete",g.xnor(value,GameData.desired_flag))
-	
+	game_timer.stop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

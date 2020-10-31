@@ -16,7 +16,7 @@ signal answer_ready(value)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.connect("pressed",self,"_button_pressed")
-
+	
 
 func _button_pressed():
 	emit_signal("answer_ready",correctness)
