@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Game",
 "language": "GDScript",
 "path": "res://src/Games/Game.gd"
+}, {
+"base": "Node",
+"class": "QueryGenerator",
+"language": "GDScript",
+"path": "res://src/Elements/QueryGeneratorTemplate.gd"
 } ]
 _global_script_class_icons={
-"Game": ""
+"Game": "",
+"QueryGenerator": ""
 }
 
 [application]
@@ -26,7 +32,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameData="res://src/GameData.tscn"
 globals="*res://src/globals.gd"
 
 [rendering]
