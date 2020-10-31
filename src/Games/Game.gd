@@ -1,10 +1,15 @@
 extends Node2D
 class_name Game
 
-const type : String = "GenericGame"
+var type : String = "GenericGame" setget set_game_type, get_game_type
 
-onready var g = get_node("/root/globals")
-onready var GameData = g.promptData
+var g = globals
+var GameData = g.promptData
+
+func set_game_type(value:String): type = value
+
+func get_game_type() -> String: return type
+
 
 
 signal player_complete(result)
@@ -15,3 +20,7 @@ func _ready():
 	pass # Replace with function body.
 
 
+
+
+func _on_Timer_timeout():
+	emit_signal("player_complete",false)
