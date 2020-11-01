@@ -2,10 +2,11 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 
-enum game_types {ARITHMETIC}
+enum game_types {ARITHMETIC,ROCK_PAPER_SCISSORS}
 var game_type_length = game_types.keys().size()
 var game_type_paths = {
-	game_types.ARITHMETIC: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn'
+	game_types.ARITHMETIC: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn',
+	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/RPS_Game/RPS_game.tscn'
 }
 
 
