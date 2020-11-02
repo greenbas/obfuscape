@@ -72,6 +72,9 @@ func _on_Button_pressed():
 	start_game()
 	
 func start_game():
+	var flag_changer = !bool(globals.rng.randi_range(0,7))
+	if(!flag_changer):
+		globals.flip_desired_flag()
 	game_index = rng.randi_range(0,number_of_games - 1)
 	print(game_index)
 	emit_signal("query_request",game_index)	
@@ -91,3 +94,8 @@ func _on_Game_player_complete(result):
 	pass # Replace with function body.
 
 
+
+
+func _on_tree_entered():
+	start_game()
+	pass

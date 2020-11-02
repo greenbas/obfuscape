@@ -15,7 +15,8 @@ var game_type_paths = {
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+func flip_desired_flag() -> void:
+	promptData["desired_flag"] = !promptData["desired_flag"]
 
 export var promptData : Dictionary = {
 	"desired_flag": false,
