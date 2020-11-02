@@ -73,7 +73,7 @@ func _on_Button_pressed():
 	
 func start_game():
 	var flag_changer = !bool(globals.rng.randi_range(0,7))
-	if(!flag_changer):
+	if(flag_changer):
 		globals.flip_desired_flag()
 	game_index = rng.randi_range(0,number_of_games - 1)
 	print(game_index)
