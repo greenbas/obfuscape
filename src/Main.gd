@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var game_node = get_node("Game Layer/Game")
+onready var camera = get_node("Camera2D")
 var rng = globals.rng
 var number_of_games = globals.game_type_length
 var game_paths = globals.game_type_paths
@@ -67,6 +68,7 @@ func _on_query_generated():
 
 func _on_Button_pressed():
 	get_node("Button").hide()
+	#camera.
 	start_game()
 	
 func start_game():
