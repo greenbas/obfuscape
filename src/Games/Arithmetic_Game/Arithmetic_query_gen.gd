@@ -40,16 +40,16 @@ func generate_query():
 		"desired_flag": globals.promptData.desired_flag,
 		"game_type": get_game_type(),
 		"prompt_data": {
-			"question": (str(op1)+operators[question_type]+str(op2)+"="),
+			"question": center_str(str(op1)+operators[question_type]+str(op2)),
 			"L": {},
 			"R": {}
 		}
 	}
 	if(coin_flip):
-		query_data.prompt_data["L"] = {"val":str(res),"flag":true}
-		query_data.prompt_data["R"] = {"val":str(false_res),"flag":false}
+		query_data.prompt_data["L"] = {"val":center_str(res),"flag":true}
+		query_data.prompt_data["R"] = {"val":center_str(false_res),"flag":false}
 	else:
-		query_data.prompt_data["L"] = {"val":str(false_res),"flag":false}
-		query_data.prompt_data["R"] = {"val":str(res),"flag":true}		
+		query_data.prompt_data["L"] = {"val":center_str(false_res),"flag":false}
+		query_data.prompt_data["R"] = {"val":center_str(res),"flag":true}		
 	emit_signal("call_finished")
 

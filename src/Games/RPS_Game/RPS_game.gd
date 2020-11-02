@@ -2,7 +2,7 @@ extends Game
 
 
 func _init():
-	set_game_type()
+	set_game_type(globals.game_types.ROCK_PAPER_SCISSORS)
 
 # Declare member variables here. Examples:
 # var a = 2

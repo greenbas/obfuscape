@@ -1,4 +1,9 @@
-extends Button
+extends TextureButton
+
+onready var label = get_node("Label")
+
+func set_text(text):
+	label.set_bbcode(text)
 
 var correctness : bool setget set_correctness,get_correctness
 # Declare member variables here. Examples:

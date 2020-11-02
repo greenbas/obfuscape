@@ -4,6 +4,12 @@ class_name QueryGenerator
 var game_type : int setget set_game_type,get_game_type
 var query_data = {}
 
+func center_str(val) -> String:
+	return "[center]" + str(val) + "[/center]"
+
+func format_answer(val,flag):
+	return {"val":center_str(val),"flag":flag}
+
 func set_game_type(value: int): game_type = value
 func get_game_type() -> int: return game_type
 
