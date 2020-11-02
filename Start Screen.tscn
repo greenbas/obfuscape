@@ -65,3 +65,4 @@ __meta__ = {
 margin_right = 216.0
 margin_bottom = 44.0
 text = "Play!"
+next_scene_path = "res://src/Main.tscn"
