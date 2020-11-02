@@ -1,10 +1,28 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://src/Elements/textured_label.gd" type="Script" id=2]
 [ext_resource path="res://src/Elements/Textures/rounded_rect.svg" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureRect
+onready var label = get_node(\"Label\")
+export var text : String setget set_text,get_text
+
+func set_text(value : String):
+	text = value
+	label.set_bbcode(value)
+	
+func get_text() -> String: 
+	return text 
+
+
+func _ready():
+	#synchronize the label's value
+	set_text(label.get_text())
+	print(get_text())
+"
+
+[sub_resource type="DynamicFont" id=2]
 size = 90
 use_mipmaps = true
 extra_spacing_top = -18
@@ -17,7 +35,7 @@ margin_bottom = 120.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
-script = ExtResource( 2 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,7 +48,7 @@ margin_bottom = 110.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
 size_flags_stretch_ratio = 1.01
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 scroll_active = false

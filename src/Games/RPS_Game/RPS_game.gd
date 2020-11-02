@@ -1,22 +1,14 @@
 extends Game
 
-
-func _init():
-	set_game_type(globals.game_types.ROCK_PAPER_SCISSORS)
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 onready var QuestionLabel = get_node("Question")
-
 onready var AnswerL = get_node("AnswerL")
 onready var AnswerR = get_node("AnswerR")
 
 
-# Called when the node enters the scene tree for the first time.
+func _init():
+	set_game_type(globals.game_types.ROCK_PAPER_SCISSORS)
+
+
 func _ready():
 	var pData = GameData.prompt_data
 	QuestionLabel.text = pData.question
@@ -34,6 +26,3 @@ func _on_player_answer(value):
 	game_timer.stop()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
