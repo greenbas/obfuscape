@@ -47,3 +47,6 @@ margin_left = 475.0
 margin_top = 235.0
 margin_right = 725.0
 margin_bottom = 485.0
+
+[node name="Timer" parent="." index="4"]
+script = SubResource( 1 )
