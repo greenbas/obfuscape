@@ -12,9 +12,6 @@ var game_type_paths = {
 }
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 func flip_desired_flag() -> void:
 	promptData["desired_flag"] = !promptData["desired_flag"]
 
@@ -39,6 +36,8 @@ func xor(a: bool,b:bool) -> bool: return !xnor(a,b)
 
 var score = 0;
 var lives = 4;
+
+var in_game: bool = false 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
