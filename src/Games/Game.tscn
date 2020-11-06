@@ -1,11 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Games/Game.gd" type="Script" id=1]
-[ext_resource path="res://src/Games/game_timer.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Timer
+
+"
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-script = ExtResource( 2 )
+script = SubResource( 1 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
