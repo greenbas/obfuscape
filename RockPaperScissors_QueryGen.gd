@@ -3,8 +3,10 @@ extends QueryGenerator
 const SYMBOLS_NUMBER : int = 3
 
 enum {ROCK,PAPER,SCISSORS}
-var symbols = {ROCK:'R',PAPER:'P',SCISSORS:'S'}
-var names = {ROCK:'Rock',PAPER:'Paper',SCISSORS:'Scissors'}
+var symbols = {ROCK:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_rock.svg[/img]',
+				PAPER:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_paper.svg[/img]',
+				SCISSORS:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_scissor.svg[/img]'}
+var names = {ROCK:'Rock',PAPER:'Paper',SCISSORS:'S'}
 
 var rps_games = [
 	{"when":ROCK,"lose":PAPER,"win":SCISSORS},
@@ -31,7 +33,7 @@ func generate_query():
 	
 	var gData = rps_games[rps_game_number]
 	
-	var question_string = center_str("Which Beats " + names[gData.when] + "?")
+	var question_string = center_str("Which Beats %s?" % symbols[gData.when])
 	var __L
 	var __R
 	if(coin_flip):
@@ -49,6 +51,7 @@ func generate_query():
 			"R": __R
 		}
 	}
+	print(str(rps_game_number) + " " + names[gData.when])
 	emit_signal("call_finished")
 
 
