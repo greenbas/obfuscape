@@ -16,7 +16,10 @@ func _ready():
 [node name="Arithmetic Game " instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Background" type="ColorRect" parent="." index="0"]
+[node name="Timer" parent="." index="0"]
+script = SubResource( 1 )
+
+[node name="Background" type="ColorRect" parent="." index="1"]
 margin_right = 800.0
 margin_bottom = 600.0
 color = Color( 0, 0.219608, 0.976471, 1 )
@@ -24,22 +27,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question" parent="." index="1" instance=ExtResource( 4 )]
+[node name="Control" type="Control" parent="." index="2"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="AnswerL" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Question" parent="Control" index="0" instance=ExtResource( 4 )]
+
+[node name="AnswerL" parent="Control" index="1" instance=ExtResource( 2 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 75.0
 margin_top = 235.0
-margin_right = 325.0
-margin_bottom = 485.0
-rect_pivot_offset = Vector2( 584, -32 )
+margin_right = 285.0
+margin_bottom = 445.0
 
-[node name="AnswerR" parent="." index="3" instance=ExtResource( 2 )]
+[node name="AnswerR" parent="Control" index="2" instance=ExtResource( 2 )]
 margin_left = 475.0
 margin_top = 235.0
 margin_right = 725.0
 margin_bottom = 485.0
-
-[node name="Timer" parent="." index="4"]
-script = SubResource( 1 )

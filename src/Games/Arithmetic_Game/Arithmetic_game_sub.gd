@@ -1,14 +1,19 @@
 extends Game
 
-onready var QuestionLabel = get_node("Question")
-onready var AnswerL = get_node("AnswerL")
-onready var AnswerR = get_node("AnswerR")
+onready var ControlContainer = $Control
+onready var QuestionLabel = get_node("Control/Question")
+onready var AnswerL = get_node("Control/AnswerL")
+onready var AnswerR = get_node("Control/AnswerR")
+var answer_result : bool
 
 func _init():
 	set_game_type(globals.game_types.ARITHMETIC)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ControlContainer.visible = true;
+	AnswerL.disabled = false
+	AnswerR.disabled = false
 	var pData = GameData.prompt_data
 	QuestionLabel.text = pData.question
 	AnswerL.set_text(str(pData.L.val)) 
@@ -21,5 +26,9 @@ func _ready():
 
 
 func _on_player_answer(value):
-	emit_signal("player_complete",g.xnor(value,GameData.desired_flag))
 	game_timer.stop()
+	AnswerL.disabled = true
+	AnswerR.disabled = true
+	var answer_result = g.xnor(value,GameData.desired_flag)
+	emit_signal("player_complete",answer_result)
+	
