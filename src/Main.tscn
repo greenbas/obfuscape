@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Games/Arithmetic_Game/Arithmetic_query_gen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/Games/Game.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Elements/RockPaperScissors_QueryGen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -43,6 +44,9 @@ func _physics_process(delta):
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+volume_db = -21.86
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
 
@@ -80,6 +84,20 @@ script = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Correct Icon" type="Sprite" parent="CanvasLayer"]
+visible = false
+modulate = Color( 0.243137, 0.737255, 0.0431373, 1 )
+position = Vector2( 400, 300 )
+scale = Vector2( 1.97229, 1.97229 )
+texture = ExtResource( 6 )
+
+[node name="Wrong Icon" type="Sprite" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 402.954, 306.468 )
+scale = Vector2( 1.97229, 1.97229 )
+texture = ExtResource( 6 )
 
 [node name="Game Layer" type="CanvasLayer" parent="."]
 
