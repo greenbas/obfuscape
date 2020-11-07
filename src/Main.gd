@@ -79,7 +79,7 @@ func start_game():
 		globals.in_game = true
 	var flag_changer = !bool(globals.rng.randi_range(0,7))
 	if(flag_changer):
-		globals.flip_desired_flag()
+		globals.promptData.flip_desired_flag()
 	game_index = rng.randi_range(0,number_of_games - 1)
 	print(game_index)
 	emit_signal("query_request",game_index)	

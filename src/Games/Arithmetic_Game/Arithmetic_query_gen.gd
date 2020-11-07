@@ -16,7 +16,7 @@ func _init():
 	
 func generate_query():
 	var op1 #first operand
-	var op2 #second operand
+	var op2 #second operandro
 	var res #result
 	var false_res
 	rng.randomize()
@@ -36,20 +36,8 @@ func generate_query():
 			op1 = op2 * res
 	false_res = generate_false_answer(res)
 	var coin_flip = bool(rng.randi_range(0,255) | 1)
-	query_data = {
-		"desired_flag": globals.promptData.desired_flag,
-		"game_type": get_game_type(),
-		"prompt_data": {
-			"question": center_str(str(op1)+operators[question_type]+str(op2)),
-			"L": {},
-			"R": {}
-		}
-	}
-	if(coin_flip):
-		query_data.prompt_data["L"] = {"val":center_str(res),"flag":true}
-		query_data.prompt_data["R"] = {"val":center_str(false_res),"flag":false}
-	else:
-		query_data.prompt_data["L"] = {"val":center_str(false_res),"flag":false}
-		query_data.prompt_data["R"] = {"val":center_str(res),"flag":true}		
+	var question = center_str(str(op1)+operators[question_type]+str(op2))
+	globals.promptData.set_game_type(get_game_type())
+	globals.promptData.set_prompt_data_question(question,center_str(res),center_str(false_res),coin_flip)
 	emit_signal("call_finished")
 

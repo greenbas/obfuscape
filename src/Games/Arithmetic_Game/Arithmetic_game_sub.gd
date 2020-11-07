@@ -31,4 +31,10 @@ func _on_player_answer(value):
 	AnswerR.disabled = true
 	var answer_result = g.xnor(value,GameData.desired_flag)
 	emit_signal("player_complete",answer_result)
-	
+
+func _on_Timer_timeout():
+	print("TIMEOUT")
+	game_timer.stop();
+	AnswerL.disabled = true
+	AnswerR.disabled = true
+	emit_signal("player_complete",false)

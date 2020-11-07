@@ -34,23 +34,8 @@ func generate_query():
 	var gData = rps_games[rps_game_number]
 	
 	var question_string = center_str("Which Beats %s?" % symbols[gData.when])
-	var __L
-	var __R
-	if(coin_flip):
-		__L = format_answer(symbols[gData.lose],false)
-		__R = format_answer(symbols[gData.win],true)
-	else:
-		__R = format_answer(symbols[gData.lose],false)
-		__L = format_answer(symbols[gData.win],true)
-	query_data = {
-		"desired_flag": globals.promptData.desired_flag,
-		"game_type": get_game_type(),
-		"prompt_data": {
-			"question": question_string,
-			"L": __L,
-			"R": __R
-		}
-	}
+	globals.promptData.set_game_type(get_game_type())
+	globals.promptData.set_prompt_data_question(question_string,symbols[gData.lose],symbols[gData.win],coin_flip)
 	print(str(rps_game_number) + " " + names[gData.when])
 	emit_signal("call_finished")
 

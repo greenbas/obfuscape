@@ -1,5 +1,8 @@
 extends Node
 
+onready var promptData = $GameData
+
+
 var rng = RandomNumberGenerator.new()
 
 enum game_types {ARITHMETIC,
@@ -11,25 +14,11 @@ var game_type_paths = {
 	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn'
 }
 
+func get_all_game_data():
+	promptData.get_all_data()
 
-func flip_desired_flag() -> void:
-	promptData["desired_flag"] = !promptData["desired_flag"]
-
-export var promptData : Dictionary = {
-	"desired_flag": false,
-	"game_type":"arithmetic",
-	"prompt_data": {
-		"question":"2+7=",
-		"L": { 
-			"val":"2",
-			"flag":false
-		},
-		"R": {
-			"val":"9",
-			"flag":true
-		}
-	}
-}
+func get_desired_flag() -> bool:
+	return promptData.get_desired_flag()
 
 func xnor(a : bool,b: bool) -> bool: return (a && b) || (!a && !b) 
 func xor(a: bool,b:bool) -> bool: return !xnor(a,b)

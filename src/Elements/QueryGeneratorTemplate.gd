@@ -2,7 +2,7 @@ extends Node
 class_name QueryGenerator
 
 var game_type : int setget set_game_type,get_game_type
-var query_data = {}
+var query_data = globals.promptData
 
 func center_str(val) -> String:
 	return "[center]" + str(val) + "[/center]"
