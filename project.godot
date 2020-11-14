@@ -23,11 +23,23 @@ _global_script_classes=[ {
 "class": "QueryGenerator",
 "language": "GDScript",
 "path": "res://src/Elements/QueryGeneratorTemplate.gd"
+}, {
+"base": "Button",
+"class": "SceneChangingButton",
+"language": "GDScript",
+"path": "res://src/Elements/PlayButton.tres.gd"
+}, {
+"base": "Button",
+"class": "VisibilitySwitcherButton",
+"language": "GDScript",
+"path": "res://src/Elements/VisibilitySwitcherButton.gd"
 } ]
 _global_script_class_icons={
 "Game": "",
 "GameData": "",
-"QueryGenerator": ""
+"QueryGenerator": "",
+"SceneChangingButton": "",
+"VisibilitySwitcherButton": ""
 }
 
 [application]

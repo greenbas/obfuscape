@@ -14,6 +14,12 @@ var game_type_paths = {
 	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn'
 }
 
+enum difficulty_modes {
+	EASY,
+	MEDIUM,
+	HARD
+}
+
 func get_all_game_data():
 	promptData.get_all_data()
 
@@ -25,6 +31,8 @@ func xor(a: bool,b:bool) -> bool: return !xnor(a,b)
 
 var score = 0;
 var lives = 4;
+
+var difficulty_mode = -1;
 
 var in_game: bool = false 
 

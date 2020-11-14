@@ -48,4 +48,4 @@ __meta__ = {
 margin_right = 216.0
 margin_bottom = 44.0
 text = "Play Again"
-next_scene_path = "res://src/Main.tscn"
+next_scene_path = "res://Start Screen.tscn"

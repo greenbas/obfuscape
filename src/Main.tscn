@@ -113,8 +113,8 @@ texture = ExtResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 400, 300 )
 current = true
-[connection signal="query_request" from="." to="Query Generators/RockPaperScissors_QueryGen" method="_on_query_requested"]
 [connection signal="query_request" from="." to="Query Generators/ArithmeticQueryGen" method="_on_query_requested"]
+[connection signal="query_request" from="." to="Query Generators/RockPaperScissors_QueryGen" method="_on_query_requested"]
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="player_complete" from="Game Layer/Game" to="." method="_on_Game_player_complete"]
 [connection signal="query_generated" from="Query Generators/ArithmeticQueryGen" to="." method="_on_query_generated"]
