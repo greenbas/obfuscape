@@ -1,5 +1,10 @@
 extends Node2D
 
+var STARTING_LIVES : int = -1
+var FLIP_FRICTION : int = -1 
+var TIMER_MAX_VALUE : float = -1.0
+var TIMER_MIN_VALUE : float = -1.0
+
 onready var game_node = get_node("Game Layer/Game")
 onready var camera = get_node("Camera2D")
 onready var SFX = $SFX
@@ -59,11 +64,24 @@ func _ready():
 	pass
 
 
+func init_starting_variables() -> void:
+	match globals.difficulty_mode:
+		globals.difficulty_modes.EASY:
+			STARTING_LIVES = 4
+			FLIP_FRICTION = 16
+			TIMER_MAX_VALUE = 4.0
+			TIMER_MIN_VALUE = 3.0
+		globals.difficulty_modes.MEDIUM:
+			STARTING_LIVES = 4
+			FLIP_FRICTION = 8
+			TIMER_MAX_VALUE = 3.0
+			TIMER_MIN_VALUE = 2.5 
+		globals.difficulty_modes.HARD:
+			STARTING_LIVES = 1 
+			FLIP_FRICTION = 4
+			TIMER_MAX_VALUE = 2.5
+			TIMER_MIN_VALUE = 1.5
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 signal game_loaded()
 func _on_query_generated():
@@ -74,10 +92,12 @@ func _on_query_generated():
 	
 func start_game():
 	if(!globals.in_game):
+		init_starting_variables()
 		globals.score = 0
-		globals.lives = 4
+		globals.lives = STARTING_LIVES
+		globals.timer_start_value = TIMER_MAX_VALUE
 		globals.in_game = true
-	var flag_changer = !bool(globals.rng.randi_range(0,7))
+	var flag_changer = !bool(globals.rng.randi_range(0,FLIP_FRICTION))
 	if(flag_changer):
 		globals.promptData.flip_desired_flag()
 	game_index = rng.randi_range(0,number_of_games - 1)
@@ -88,6 +108,8 @@ func start_game():
 func _on_Game_player_complete(result):
 	if(result):
 		globals.score += 1
+		if globals.score % 3 == 0 && globals.timer_start_value > TIMER_MIN_VALUE:
+			globals.timer_start_value -= 0.1
 		SFX.stream = correct_sfx
 		correct_icon.visible = true
 		SFX.play()

@@ -6,8 +6,7 @@
 script/source = "tool
 extends SceneChangingButton
 
-
-export(globals.difficulty_modes) var mode_set: int = -1 
+export(globals.difficulty_modes) var mode_set: int 
 
 func _on_button_up():
 	globals.difficulty_mode = mode_set 

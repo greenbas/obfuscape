@@ -2,6 +2,19 @@ extends QueryGenerator
 
 enum {ADD,SUB,MUL,DIV}
 var operators = {ADD:'+',SUB:'-',MUL:'*',DIV:'/'}
+var difficulty_mode = globals.difficulty_mode
+var RANGE_LIMIT : int = -1
+
+func set_difficulty_range() -> void: 
+	match globals.difficulty_mode:
+		globals.difficulty_modes.EASY:
+			RANGE_LIMIT = 1
+		globals.difficulty_modes.MEDIUM:
+			RANGE_LIMIT = 3
+		globals.difficulty_modes.HARD:
+			RANGE_LIMIT = 3
+
+
 
 func generate_false_answer(x : int) -> int:
 	var offset = rng.randi_range(0,19)
@@ -15,12 +28,13 @@ func _init():
 	set_game_type(game_types.ARITHMETIC)
 	
 func generate_query():
+	set_difficulty_range()
 	var op1 #first operand
 	var op2 #second operandro
 	var res #result
 	var false_res
 	rng.randomize()
-	var question_type : int = rng.randi_range(0,3)
+	var question_type : int = rng.randi_range(0,RANGE_LIMIT)
 	op1 = rng.randi_range(1,10)
 	op2 = rng.randi_range(1,10)
 	match question_type:
