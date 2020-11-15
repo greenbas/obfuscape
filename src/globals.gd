@@ -29,10 +29,14 @@ func get_desired_flag() -> bool:
 func xnor(a : bool,b: bool) -> bool: return (a && b) || (!a && !b) 
 func xor(a: bool,b:bool) -> bool: return !xnor(a,b)
 
+var difficulty_mode = -1;
+var timer_start_value : float
+
+
+
 var score = 0;
 var lives = 4;
 
-var difficulty_mode = -1;
 
 var in_game: bool = false 
 

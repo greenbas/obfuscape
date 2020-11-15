@@ -6,6 +6,7 @@ var type : int = -1 setget set_game_type, get_game_type
 var g = globals
 var GameData = g.promptData.get_all_data()
 onready var game_timer = get_node("Timer")
+onready var timer_bar = $"Timer Bar"
 
 func set_game_type(value:int): type = value
 

@@ -22,7 +22,7 @@ func _ready():
 	AnswerR.set_correctness(pData.R.flag)
 	AnswerL.connect("answer_ready",self,"_on_player_answer")
 	AnswerR.connect("answer_ready",self,"_on_player_answer")
-	game_timer.start(3.0)
+	game_timer.start(globals.timer_start_value)
 
 
 func _on_player_answer(value):
