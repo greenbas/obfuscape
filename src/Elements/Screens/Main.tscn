@@ -1,12 +1,15 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Games/Arithmetic_Game/Arithmetic_query_gen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Main.gd" type="Script" id=2]
+[ext_resource path="res://src/Elements/Screens/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/Games/Game.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Elements/RockPaperScissors_QueryGen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Elements/Custom_Elements/RockPaperScissors_QueryGen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://cross.svg" type="Texture" id=6]
-[ext_resource path="res://check.svg" type="Texture" id=7]
+[ext_resource path="res://src/Elements/Icons/cross.svg" type="Texture" id=6]
+[ext_resource path="res://src/Elements/Icons/check.svg" type="Texture" id=7]
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -53,8 +56,8 @@ layer = 100
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
 layer = 100
-offset = Vector2( 0, -20 )
-transform = Transform2D( 1, 0, 0, 1, 0, -20 )
+offset = Vector2( 0, -30 )
+transform = Transform2D( 1, 0, 0, 1, 0, -30 )
 
 [node name="LivesLabel" type="Label" parent="CanvasLayer/CanvasLayer"]
 margin_top = 568.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cross.svg-4afb6690c839e8b805f7b810b81502cb.stex"
+path="res://.import/check.svg-1342a958fdd36c9d9515f40ade9a2eb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cross.svg"
-dest_files=[ "res://.import/cross.svg-4afb6690c839e8b805f7b810b81502cb.stex" ]
+source_file="res://src/Elements/Icons/check.svg"
+dest_files=[ "res://.import/check.svg-1342a958fdd36c9d9515f40ade9a2eb3.stex" ]
 
 [params]
 

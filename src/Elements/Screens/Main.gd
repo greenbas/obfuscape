@@ -1,4 +1,6 @@
+tool
 extends Node2D
+
 
 var STARTING_LIVES : int = -1
 var FLIP_FRICTION : int = -1 
@@ -15,8 +17,8 @@ var number_of_games = globals.game_type_length
 var game_paths = globals.game_type_paths
 var game_index = 0
 
-var correct_sfx = load("res://src/Games/Sounds/correct.ogg")
-var wrong_sfx = load("res://src/Games/Sounds/wrong.ogg")
+var correct_sfx = load("res://src/Elements/Sounds/correct.ogg")
+var wrong_sfx = load("res://src/Elements/Sounds/wrong.ogg")
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -134,7 +136,7 @@ func _on_Game_player_complete(result):
 
 func game_over():
 	globals.in_game = false
-	get_tree().change_scene("res://Game_Over.tscn")
+	get_tree().change_scene("res://src/Elements/Screens/Game_Over.tscn")
 	pass
 
 func _on_tree_entered():

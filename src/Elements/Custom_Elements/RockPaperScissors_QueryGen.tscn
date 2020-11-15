@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Games/RPS_Game/RPS_QueryGen.gd" type="Script" id=1]
+[ext_resource path="res://src/Elements/Custom_Elements/QueryGeneratorTemplate.tscn" type="PackedScene" id=2]
+
+
+
+[node name="RockPaperScissors_QueryGen" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

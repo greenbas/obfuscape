@@ -1,7 +1,7 @@
 	extends Node
 class_name GameData
 
-export var desired_flag : bool = false setget set_desired_flag, get_desired_flag
+export var desired_flag : bool = true setget set_desired_flag, get_desired_flag
 export var game_type : int = 0 setget set_game_type,get_game_type
 export var prompt_data : Dictionary = {"question":"2+7=","L": { "val":"2","flag":false},"R": {"val":"9","flag":true}} setget set_prompt_data,get_prompt_data
 
