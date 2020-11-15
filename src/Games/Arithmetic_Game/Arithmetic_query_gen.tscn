@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/Elements/QueryGeneratorTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Elements/Custom_Elements/QueryGeneratorTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Games/Arithmetic_Game/Arithmetic_query_gen.gd" type="Script" id=2]
 
 [node name="ArithmeticQueryGen" instance=ExtResource( 1 )]

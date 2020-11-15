@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://NumberButton.gd" type="Script" id=1]
+[ext_resource path="res://src/Elements/Custom_Elements/NumberButton.gd" type="Script" id=1]
 [ext_resource path="res://src/Elements/Textures/pressed.svg" type="Texture" id=2]
 [ext_resource path="res://src/Elements/Textures/normal.svg" type="Texture" id=3]
 [ext_resource path="res://src/Elements/Textures/hover.svg" type="Texture" id=4]
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 80

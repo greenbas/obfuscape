@@ -1,24 +1,28 @@
+tool
 extends Node2D
 
-var STARTING_LIVES : int = -1
-var FLIP_FRICTION : int = -1 
-var TIMER_MAX_VALUE : float = -1.0
-var TIMER_MIN_VALUE : float = -1.0
+
+var STARTING_LIVES  := -1
+var FLIP_FRICTION   := -1 
+var TIMER_MAX_VALUE := -0.1
+var TIMER_MIN_VALUE := -0.1
 
 onready var game_node = get_node("Game Layer/Game")
 onready var camera = get_node("Camera2D")
-onready var SFX = $SFX
 onready var correct_icon = get_node("CanvasLayer/Correct Icon")
 onready var wrong_icon = get_node("CanvasLayer/Wrong Icon")
+
+onready var SFX = $SFX
+
 var rng = globals.rng
 var number_of_games = globals.game_type_length
 var game_paths = globals.game_type_paths
 var game_index = 0
 
-var correct_sfx = load("res://src/Games/Sounds/correct.ogg")
-var wrong_sfx = load("res://src/Games/Sounds/wrong.ogg")
+var correct_sfx = load("res://src/Elements/Sounds/correct.ogg")
+var wrong_sfx   = load("res://src/Elements/Sounds/wrong.ogg")
 
-func goto_scene(path):
+func goto_scene(path) -> void:
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.
 	# Deleting the current scene at this point is
@@ -31,7 +35,7 @@ func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
 
 
-func _deferred_goto_scene(path):
+func _deferred_goto_scene(path) -> void:
 	# It is now safe to remove the current scene
 	var parent = game_node.get_parent()
 	
@@ -132,9 +136,9 @@ func _on_Game_player_complete(result):
 		game_over()
 	pass # Replace with function body.
 
-func game_over():
+func game_over() -> void:
 	globals.in_game = false
-	get_tree().change_scene("res://Game_Over.tscn")
+    get_tree().change_scene("res://src/Elements/Screens/Game_Over.tscn")
 	pass
 
 func _on_tree_entered():

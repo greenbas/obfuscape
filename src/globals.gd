@@ -10,8 +10,8 @@ enum game_types {ARITHMETIC,
 				}
 var game_type_length = game_types.keys().size()
 var game_type_paths = {
-	game_types.ARITHMETIC: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn',
-	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/Arithmetic_Game/Arithmetic_game_sub.tscn'
+	game_types.ARITHMETIC: 'res://src/Games/Arithmetic_Game/Arithmetic_Game.tscn',
+	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/Arithmetic_Game/Arithmetic_Game.tscn'
 }
 
 enum difficulty_modes {
