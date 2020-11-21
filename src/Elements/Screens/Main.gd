@@ -19,8 +19,8 @@ var number_of_games = globals.game_type_length
 var game_paths = globals.game_type_paths
 var game_index = 0
 
-var correct_sfx = load("res://src/Elements/Sounds/correct.ogg")
-var wrong_sfx   = load("res://src/Elements/Sounds/wrong.ogg")
+var correct_sfx = load(globals.RESOURCES.sounds.Correct_Sound.resource_path)
+var wrong_sfx   = load(globals.RESOURCES.sounds.Wrong_Sound.resource_path)
 
 func goto_scene(path) -> void:
 	# This function will usually be called from a signal callback,
@@ -72,17 +72,17 @@ func init_starting_variables() -> void:
 	match globals.difficulty_mode:
 		globals.difficulty_modes.EASY:
 			STARTING_LIVES = 4
-			FLIP_FRICTION = 16
+			FLIP_FRICTION = 4
 			TIMER_MAX_VALUE = 4.0
 			TIMER_MIN_VALUE = 3.0
 		globals.difficulty_modes.MEDIUM:
 			STARTING_LIVES = 4
-			FLIP_FRICTION = 8
+			FLIP_FRICTION = 4
 			TIMER_MAX_VALUE = 3.0
 			TIMER_MIN_VALUE = 2.5 
 		globals.difficulty_modes.HARD:
 			STARTING_LIVES = 1 
-			FLIP_FRICTION = 4
+			FLIP_FRICTION = 2
 			TIMER_MAX_VALUE = 2.5
 			TIMER_MIN_VALUE = 1.5
 
@@ -138,7 +138,7 @@ func _on_Game_player_complete(result):
 
 func game_over() -> void:
 	globals.in_game = false
-	get_tree().change_scene("res://src/Elements/Screens/Game_Over.tscn")
+	get_tree().change_scene(globals.RESOURCES.screens.Game_Over_Screen.resource_path)
 	pass
 
 func _on_tree_entered():

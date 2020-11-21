@@ -3,22 +3,25 @@ extends Node
 onready var promptData = $GameData
 
 
+export(Dictionary) var RESOURCES 
+
+var difficulty_modes = {}
+
 var rng = RandomNumberGenerator.new()
 
 enum game_types {ARITHMETIC,
 				ROCK_PAPER_SCISSORS
 				}
 var game_type_length = game_types.keys().size()
-var game_type_paths = {
-	game_types.ARITHMETIC: 'res://src/Games/Arithmetic_Game/Arithmetic_Game.tscn',
-	game_types.ROCK_PAPER_SCISSORS: 'res://src/Games/Arithmetic_Game/Arithmetic_Game.tscn'
+
+
+onready var game_type_paths = {
+	game_types.ARITHMETIC: RESOURCES.games.ARITHMETIC.resource_path,
+	game_types.ROCK_PAPER_SCISSORS: RESOURCES.games.ROCK_PAPER_SCISSORS.resource_path
 }
 
-enum difficulty_modes {
-	EASY,
-	MEDIUM,
-	HARD
-}
+func _ready():
+	get_tree().change_scene(RESOURCES.screens.Start_Screen.resource_path) 
 
 func get_all_game_data():
 	promptData.get_all_data()
