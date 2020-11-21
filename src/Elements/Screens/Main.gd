@@ -138,7 +138,7 @@ func _on_Game_player_complete(result):
 
 func game_over() -> void:
 	globals.in_game = false
-    get_tree().change_scene("res://src/Elements/Screens/Game_Over.tscn")
+	get_tree().change_scene("res://src/Elements/Screens/Game_Over.tscn")
 	pass
 
 func _on_tree_entered():
