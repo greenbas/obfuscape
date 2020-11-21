@@ -24,7 +24,7 @@ func _ready():
 
 [sub_resource type="DynamicFont" id=2]
 size = 90
-outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 extra_spacing_top = -18
 extra_spacing_bottom = 2
 font_data = ExtResource( 1 )
@@ -51,8 +51,6 @@ size_flags_stretch_ratio = 1.01
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "test"
-text = "test"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

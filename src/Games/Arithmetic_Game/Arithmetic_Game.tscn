@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Games/Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Elements/Custom_Elements/NumberButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Games/Arithmetic_Game/Arithmetic_Game.gd" type="Script" id=3]
 [ext_resource path="res://src/Elements/Custom_Elements/textured_label.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Elements/Textures/red_box.tres" type="Texture" id=5]
-[ext_resource path="res://src/Elements/Textures/green_box.tres" type="Texture" id=6]
+
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Timer
@@ -17,8 +17,6 @@ func _ready():
 
 [node name="Arithmetic Game " instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-red_box = ExtResource( 5 )
-green_box = ExtResource( 6 )
 
 [node name="Timer" parent="." index="0"]
 script = SubResource( 1 )
@@ -32,11 +30,11 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="." index="2"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Question" parent="Control" index="0" instance=ExtResource( 4 )]
-texture = ExtResource( 5 )
 
 [node name="AnswerL" parent="Control" index="1" instance=ExtResource( 2 )]
 anchor_right = 1.0

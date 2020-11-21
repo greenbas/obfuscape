@@ -1,17 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/Themes/Poco_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/Elements/Themes/Poco_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/Elements/Custom_Elements/VisibilitySwitcherButton.gd" type="Script" id=2]
 [ext_resource path="res://src/Elements/Custom_Elements/ModeSettingButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Elements/Shaders/CRT-Screen.tres" type="Material" id=4]
 [ext_resource path="res://src/Elements/Custom_Elements/PlayButton.tscn" type="PackedScene" id=5]
-
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
 
 [node name="Mainscreen" type="Control"]
 anchor_right = 1.0
@@ -115,14 +107,3 @@ margin_bottom = 140.0
 text = "Hard"
 next_scene_path = "res://src/Elements/Screens/Main.tscn"
 mode_set = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-material = ExtResource( 4 )
-margin_right = 800.0
-margin_bottom = 600.0
-mouse_filter = 2
-texture = SubResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
