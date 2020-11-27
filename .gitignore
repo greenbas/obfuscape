@@ -13,3 +13,5 @@ update_wiki.sh
 update_wiki.bat
 Obfuscape.zip
 obfuscape.exe
+update_import_syncthing.bat
+update_syncthing.bat
