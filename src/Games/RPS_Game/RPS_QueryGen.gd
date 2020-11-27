@@ -2,10 +2,19 @@ extends QueryGenerator
 
 const SYMBOLS_NUMBER : int = 3
 
+var ICONS = globals.RESOURCES.icons
+
+func make_bbcode_icon(icon: Resource,height:int=-1,width:int=-1) -> String:
+	if height == -1: 
+		height = 60
+	if width == -1: 
+		width = height
+	return '[img=%dx%d]%s[/img]' % [width,height,icon.get_path()]
+
 enum {ROCK,PAPER,SCISSORS}
-var symbols = {ROCK:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_rock.svg[/img]',
-				PAPER:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_paper.svg[/img]',
-				SCISSORS:'[img=60x60]res://src/Games/RPS_Game/icon/pixel_scissor.svg[/img]'}
+onready var symbols = {ROCK:make_bbcode_icon(ICONS.rock),
+				PAPER:make_bbcode_icon(ICONS.paper),
+				SCISSORS:make_bbcode_icon(ICONS.scissors)}
 var names = {ROCK:'Rock',PAPER:'Paper',SCISSORS:'S'}
 
 var rps_games = [

@@ -2,6 +2,7 @@ extends Node
 
 onready var promptData = $GameData
 
+var IS_MULTIPLAYER = false
 
 export(Dictionary) var RESOURCES 
 

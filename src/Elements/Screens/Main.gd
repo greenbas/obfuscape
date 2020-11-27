@@ -7,7 +7,7 @@ var FLIP_FRICTION   := -1
 var TIMER_MAX_VALUE := -0.1
 var TIMER_MIN_VALUE := -0.1
 
-onready var game_node = get_node("Game Layer/Game")
+onready var game_node = get_node("Game Layer Node/Game Layer/Game")
 onready var camera = get_node("Camera2D")
 onready var correct_icon = get_node("CanvasLayer/Correct Icon")
 onready var wrong_icon = get_node("CanvasLayer/Wrong Icon")
@@ -18,6 +18,7 @@ var rng = globals.rng
 var number_of_games = globals.game_type_length
 var game_paths = globals.game_type_paths
 var game_index = 0
+var remaining_turns = 0;
 
 var correct_sfx = load(globals.RESOURCES.sounds.Correct_Sound.resource_path)
 var wrong_sfx   = load(globals.RESOURCES.sounds.Wrong_Sound.resource_path)
@@ -101,6 +102,9 @@ func start_game():
 		globals.lives = STARTING_LIVES
 		globals.timer_start_value = TIMER_MAX_VALUE
 		globals.in_game = true
+		if globals.IS_MULTIPLAYER:
+			remaining_turns = rng.randi_range(3,5)
+			globals.lives = 1
 	var flag_changer = !bool(globals.rng.randi_range(0,FLIP_FRICTION))
 	if(flag_changer):
 		globals.promptData.flip_desired_flag()
@@ -131,6 +135,17 @@ func _on_Game_player_complete(result):
 		print("fail")
 		print("lives: " + str(globals.lives))
 	if globals.lives > 0:
+		if globals.IS_MULTIPLAYER:
+			remaining_turns -= 1
+			if remaining_turns == 0:
+				game_node.visible = false
+				SFX.stream = correct_sfx
+				$CanvasLayer/CanvasLayer/PassLabel.visible = true
+				SFX.play()
+				yield(SFX,"finished")
+				$CanvasLayer/CanvasLayer/PassLabel.visible = false
+				game_node.visible = true
+				remaining_turns = rng.randi_range(3,5)
 		start_game()
 	else: 
 		game_over()
@@ -138,6 +153,7 @@ func _on_Game_player_complete(result):
 
 func game_over() -> void:
 	globals.in_game = false
+	globals.IS_MULTIPLAYER = false
 	get_tree().change_scene(globals.RESOURCES.screens.Game_Over_Screen.resource_path)
 	pass
 

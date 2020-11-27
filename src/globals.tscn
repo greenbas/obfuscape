@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/globals.gd" type="Script" id=1]
 [ext_resource path="res://src/Elements/Sounds/correct.ogg" type="AudioStream" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://src/Games/Arithmetic_Game/Arithmetic_Game.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Elements/Screens/Main.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Elements/Screens/Start_Screen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Games/RPS_Game/icon/pixel_paper.svg" type="Texture" id=9]
+[ext_resource path="res://src/Games/RPS_Game/icon/pixel_rock.svg" type="Texture" id=10]
+[ext_resource path="res://src/Games/RPS_Game/icon/pixel_scissor.svg" type="Texture" id=11]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -15,6 +18,11 @@ RESOURCES = {
 "games": {
 "ARITHMETIC": ExtResource( 6 ),
 "ROCK_PAPER_SCISSORS": ExtResource( 6 )
+},
+"icons": {
+"paper": ExtResource( 9 ),
+"rock": ExtResource( 10 ),
+"scissors": ExtResource( 11 )
 },
 "screens": {
 "Game_Over_Screen": ExtResource( 3 ),
