@@ -1,13 +1,37 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Elements/Custom_Elements/NumberButton.gd" type="Script" id=1]
 [ext_resource path="res://src/Elements/Textures/pressed.svg" type="Texture" id=2]
 [ext_resource path="res://src/Elements/Textures/normal.svg" type="Texture" id=3]
 [ext_resource path="res://src/Elements/Textures/hover.svg" type="Texture" id=4]
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureButton
 
-[sub_resource type="DynamicFont" id=1]
+onready var label = get_node(\"Label\")
+
+var correctness : bool setget set_correctness,get_correctness
+
+func set_correctness(val : bool):
+	correctness = val;
+	
+func get_correctness() -> bool:
+	return correctness
+
+signal answer_ready(value)
+
+func _ready():
+	self.connect(\"pressed\",self,\"_button_pressed\")
+
+func set_text(text):
+	label.set_bbcode(text)
+
+func _button_pressed():
+	emit_signal(\"answer_ready\",correctness)
+
+"
+
+[sub_resource type="DynamicFont" id=2]
 size = 80
 use_mipmaps = true
 extra_spacing_top = -18
@@ -23,7 +47,7 @@ texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 4 )
 expand = true
-script = ExtResource( 1 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,13 +58,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -45.0
-margin_top = -45.0
-margin_right = 45.0
-margin_bottom = 45.0
+margin_left = -43.9405
+margin_top = -45.5297
+margin_right = 46.0595
+margin_bottom = 44.4703
 mouse_filter = 1
 size_flags_horizontal = 3
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 __meta__ = {
