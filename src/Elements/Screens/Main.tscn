@@ -43,26 +43,23 @@ func _physics_process(delta):
 		set_frame_color(Color(1,0,0,1))
 "
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 80
 use_mipmaps = true
 extra_spacing_top = -18
 extra_spacing_bottom = 2
 font_data = ExtResource( 5 )
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
 width = 800
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-volume_db = -21.86
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -128,7 +125,7 @@ margin_left = -88.0
 margin_top = -40.0
 margin_right = 88.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "PASS!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -175,15 +172,17 @@ material = ExtResource( 8 )
 margin_right = 800.0
 margin_bottom = 600.0
 mouse_filter = 2
-texture = SubResource( 6 )
+texture = SubResource( 7 )
 expand = true
 stretch_mode = 1
 flip_v = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="query_request" from="." to="Query Generators/RockPaperScissors_QueryGen" method="_on_query_requested"]
+
+[node name="Background_Tick" type="AudioStreamPlayer" parent="."]
 [connection signal="query_request" from="." to="Query Generators/ArithmeticQueryGen" method="_on_query_requested"]
+[connection signal="query_request" from="." to="Query Generators/RockPaperScissors_QueryGen" method="_on_query_requested"]
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="player_complete" from="Game Layer Node/Game Layer/Game" to="." method="_on_Game_player_complete"]
 [connection signal="query_generated" from="Query Generators/ArithmeticQueryGen" to="." method="_on_query_generated"]

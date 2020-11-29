@@ -1,4 +1,4 @@
-	extends Node
+extends Node
 class_name GameData
 
 export var desired_flag : bool = true setget set_desired_flag, get_desired_flag

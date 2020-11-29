@@ -12,7 +12,7 @@ onready var camera = get_node("Camera2D")
 onready var correct_icon = get_node("CanvasLayer/Correct Icon")
 onready var wrong_icon = get_node("CanvasLayer/Wrong Icon")
 
-onready var SFX = $SFX
+onready var SFX = globals.get_node("sfx")
 
 var rng = globals.rng
 var number_of_games = globals.game_type_length
@@ -20,8 +20,8 @@ var game_paths = globals.game_type_paths
 var game_index = 0
 var remaining_turns = 0;
 
-var correct_sfx = load(globals.RESOURCES.sounds.Correct_Sound.resource_path)
-var wrong_sfx   = load(globals.RESOURCES.sounds.Wrong_Sound.resource_path)
+#var correct_sfx = load(globals.RESOURCES.sounds.Correct_Sound.resource_path)
+#var wrong_sfx   = load(globals.RESOURCES.sounds.Wrong_Sound.resource_path)
 
 func goto_scene(path) -> void:
 	# This function will usually be called from a signal callback,
@@ -118,18 +118,16 @@ func _on_Game_player_complete(result):
 		globals.score += 1
 		if globals.score % 3 == 0 && globals.timer_start_value > TIMER_MIN_VALUE:
 			globals.timer_start_value -= 0.1
-		SFX.stream = correct_sfx
 		correct_icon.visible = true
-		SFX.play()
+		SFX.play("correct")
 		yield(SFX,"finished")
 		correct_icon.visible = false
 		print("Victory!")
 		print("score: " + str(globals.score))
 	else:
 		globals.lives -= 1
-		SFX.stream = wrong_sfx
 		wrong_icon.visible = true
-		SFX.play()
+		SFX.play("wrong")
 		yield(SFX,"finished")
 		wrong_icon.visible = false
 		print("fail")
@@ -139,9 +137,8 @@ func _on_Game_player_complete(result):
 			remaining_turns -= 1
 			if remaining_turns == 0:
 				game_node.visible = false
-				SFX.stream = correct_sfx
 				$CanvasLayer/CanvasLayer/PassLabel.visible = true
-				SFX.play()
+				SFX.play("passgame")
 				yield(SFX,"finished")
 				$CanvasLayer/CanvasLayer/PassLabel.visible = false
 				game_node.visible = true

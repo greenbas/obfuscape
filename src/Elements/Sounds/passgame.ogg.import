@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/passgame.ogg-443e172b9ecdd6b3bdb1be1b358efa2c.oggstr"
+
+[deps]
+
+source_file="res://src/Elements/Sounds/passgame.ogg"
+dest_files=[ "res://.import/passgame.ogg-443e172b9ecdd6b3bdb1be1b358efa2c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
