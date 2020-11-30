@@ -14,31 +14,31 @@ tracks/0/path = NodePath(".:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1.5, 0.3, 0.3, 0.3 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 20, 20 ), Vector2( 800, 20 ), Vector2( 800, 600 ) ]
+"values": [  ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1.5, 0.3, 0.3, 0.3 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 400, 300 ), Vector2( 390, 290 ), Vector2( 0, 290 ), Vector2( 0, 0 ) ]
+"values": [  ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../HBoxContainer/Tutorial:visible")
+tracks/2/path = NodePath("../HBoxContainer/Main Menu:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.992 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -46,24 +46,12 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../HBoxContainer/Main Menu:visible")
+tracks/3/path = NodePath("../RichTextLabel:percent_visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.992 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../RichTextLabel:percent_visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 0.992, 2.976, 2.992 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
@@ -95,10 +83,6 @@ anims/Come_Online = SubResource( 1 )
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 400.0
-margin_top = 300.0
-margin_right = -400.0
-margin_bottom = -300.0
 color = Color( 0, 0.219608, 0.976471, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,19 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tutorial" type="Button" parent="HBoxContainer"]
-visible = false
-margin_right = 398.0
-margin_bottom = 80.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-text = "Tutorial"
-script = ExtResource( 3 )
-next_scene_path = "res://src/Elements/Screens/Tutorial_Screen.tscn"
-
 [node name="Main Menu" type="Button" parent="HBoxContainer"]
-visible = false
-margin_left = 402.0
 margin_right = 800.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
@@ -139,29 +111,23 @@ margin_top = 10.0
 margin_right = 790.0
 margin_bottom = 510.0
 bbcode_enabled = true
-bbcode_text = "[center]It's the year [color=yellow]203X[/color][/center]
-[center]AI assistants the primary interface 
-for [color=yellow]all modern computing devices[/color][/center]
-[center][shake level=2][color=red]Cult Leaders[/color][/shake], [shake level=2][color=red]Scam Artists[/color][/shake] and [shake level=2][color=red]Spies[/color][/shake] are using their AI assistants to generate multi-targeted disinformation campaigns,[/center][center]Undermining the public good 
-for their own [shake level=2][color=red]selfish ends[/color][/shake]
-[center]You, the [wave][color=#00FF00]AI HACKER[/color][/wave] are tasked with
-retraining these AI systems to make
-them less effective in a way these
-feckless feinds won't notice until it's too late![/center]
-[rainbow freq=0.05 sat=0.5]MISINFORM THE AI SO THEY CAN'T MISINFORM THE PUBLIC!!![/rainbow]
+bbcode_text = "[center]When the game starts you will be presented with two different kinds of questions.
+A basic arithmetic question OR
+A rock([img=30]res://src/Games/RPS_Game/icon/pixel_rock.svg[/img]) paper([img=30]res://src/Games/RPS_Game/icon/pixel_paper.svg[/img]) scissors([img=30]res://src/Games/RPS_Game/icon/pixel_scissor.svg[/img]) question
+
+if the prompt box is [color=#00FF00]green([img=30]res://src/Elements/Icons/check_green.svg[/img])[/color], then you must answer the question correctly. If the prompt box is [color=red]red([img=30]res://src/Elements/Icons/cross_red.svg[/img])[/color], then you must answer the question incorrectly.
+
+if you fail too many times, the AI's security system will lock you out.
+
 "
-visible_characters = 0
-percent_visible = 0.0
-text = "It's the year 203X
-AI assistants the primary interface 
-for all modern computing devices
-Cult Leaders, Scam Artists and Spies are using their AI assistants to generate multi-targeted disinformation campaigns,Undermining the public good 
-for their own selfish ends
-You, the AI HACKER are tasked with
-retraining these AI systems to make
-them less effective in a way these
-feckless feinds won't notice until it's too late!
-MISINFORM THE AI SO THEY CAN'T MISINFORM THE PUBLIC!!!
+text = "When the game starts you will be presented with two different kinds of questions.
+A basic arithmetic question OR
+A rock() paper() scissors() question
+
+if the prompt box is green(), then you must answer the question correctly. If the prompt box is red(), then you must answer the question incorrectly.
+
+if you fail too many times, the AI's security system will lock you out.
+
 "
 scroll_active = false
 __meta__ = {
@@ -179,5 +145,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="button_up" from="HBoxContainer/Tutorial" to="HBoxContainer/Tutorial" method="_on_button_up"]
 [connection signal="button_up" from="HBoxContainer/Main Menu" to="HBoxContainer/Main Menu" method="_on_button_up"]

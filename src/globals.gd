@@ -22,7 +22,7 @@ onready var game_type_paths = {
 }
 
 func _ready():
-	get_tree().change_scene(RESOURCES.screens.Start_Screen.resource_path) 
+	get_tree().change_scene(RESOURCES.screens.Story_Screen.resource_path) 
 
 func get_all_game_data():
 	promptData.get_all_data()

@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Obfuscape"
-run/main_scene="res://src/globals.tscn"
+run/main_scene="res://src/Elements/Screens/Start_Screen.tscn"
 boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"

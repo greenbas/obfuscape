@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/globals.gd" type="Script" id=1]
 [ext_resource path="res://src/Elements/Sounds/correct.ogg" type="AudioStream" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/Elements/Sounds/passgame.ogg" type="AudioStream" id=12]
 [ext_resource path="res://src/Elements/Custom_Elements/AudioStreamPlayer2D_Modified.gd" type="Script" id=13]
 [ext_resource path="res://src/Elements/Custom_Elements/AudioLibrary2D.tres.gd" type="Script" id=14]
+[ext_resource path="res://src/Elements/Screens/Story_Screen.tscn" type="PackedScene" id=15]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -30,7 +31,8 @@ RESOURCES = {
 "screens": {
 "Game_Over_Screen": ExtResource( 3 ),
 "Main_Screen": ExtResource( 7 ),
-"Start_Screen": ExtResource( 8 )
+"Start_Screen": ExtResource( 8 ),
+"Story_Screen": ExtResource( 15 )
 },
 "sounds": {
 "Correct_Sound": ExtResource( 2 ),
@@ -56,5 +58,3 @@ script = ExtResource( 13 )
 [node name="wrong" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource( 5 )
 script = ExtResource( 13 )
-
-[node name="SignalManager" type="Node" parent="."]

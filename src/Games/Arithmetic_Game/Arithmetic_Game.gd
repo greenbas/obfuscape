@@ -40,8 +40,8 @@ func _on_player_answer(value):
 	game_timer.stop()
 	AnswerL.disabled = true
 	AnswerR.disabled = true
-	var answer_result = g.xnor(value,GameData.desired_flag)
-	emit_signal("player_complete",answer_result)
+	var res = g.xnor(value,GameData.desired_flag)
+	emit_signal("player_complete",res)
 
 func _on_Timer_timeout():
 	print("TIMEOUT")

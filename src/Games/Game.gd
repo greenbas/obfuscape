@@ -14,7 +14,6 @@ func get_game_type() -> int: return type
 
 
 
-signal player_complete(result)
 
 
 # Called when the node enters the scene tree for the first time.

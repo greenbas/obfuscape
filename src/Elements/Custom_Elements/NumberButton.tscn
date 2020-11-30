@@ -21,7 +21,7 @@ func get_correctness() -> bool:
 signal answer_ready(value)
 
 func _ready():
-	self.connect(\"pressed\",self,\"_button_pressed\")
+	var _a = self.connect(\"pressed\",self,\"_button_pressed\")
 
 func set_text(text):
 	label.set_bbcode(text)
