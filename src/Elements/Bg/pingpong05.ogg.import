@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pingpong05.ogg-b174ae3968f9a57bbbc5d9e84714b2c6.oggstr"
+
+[deps]
+
+source_file="res://src/Elements/Bg/pingpong05.ogg"
+dest_files=[ "res://.import/pingpong05.ogg-b174ae3968f9a57bbbc5d9e84714b2c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

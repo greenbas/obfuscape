@@ -40,7 +40,7 @@ var timer_start_value : float
 
 var score = 0;
 var lives = 4;
-
+var game_level = 0
 
 var in_game: bool = false 
 

@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "AudioLibrary2D",
+"language": "GDScript",
+"path": "res://src/Elements/Custom_Elements/AudioLibrary2D.tres.gd"
+}, {
+"base": "AudioStreamPlayer2D",
+"class": "AudioStreamPlayer2D_Modified",
+"language": "GDScript",
+"path": "res://src/Elements/Custom_Elements/AudioStreamPlayer2D_Modified.gd"
+}, {
+"base": "Node2D",
 "class": "Game",
 "language": "GDScript",
 "path": "res://src/Games/Game.gd"
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://src/Elements/Custom_Elements/VisibilitySwitcherButton.gd"
 } ]
 _global_script_class_icons={
+"AudioLibrary2D": "",
+"AudioStreamPlayer2D_Modified": "",
 "Game": "",
 "GameData": "",
 "QueryGenerator": "",
