@@ -3,6 +3,8 @@ class_name Game
 
 var type : int = -1 setget set_game_type, get_game_type
 
+signal player_complete(val)
+
 var g = globals
 var GameData = g.promptData.get_all_data()
 onready var game_timer = get_node("Timer")

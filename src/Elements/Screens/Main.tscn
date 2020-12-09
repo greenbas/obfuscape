@@ -231,8 +231,8 @@ script = ExtResource( 9 )
 [node name="20" type="AudioStreamPlayer2D" parent="TickTockBG"]
 stream = ExtResource( 11 )
 script = ExtResource( 9 )
-[connection signal="query_request" from="." to="Query Generators/ArithmeticQueryGen" method="_on_query_requested"]
 [connection signal="query_request" from="." to="Query Generators/RockPaperScissors_QueryGen" method="_on_query_requested"]
+[connection signal="query_request" from="." to="Query Generators/ArithmeticQueryGen" method="_on_query_requested"]
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="query_generated" from="Query Generators/ArithmeticQueryGen" to="." method="_on_query_generated"]
 [connection signal="query_generated" from="Query Generators/RockPaperScissors_QueryGen" to="." method="_on_query_generated"]

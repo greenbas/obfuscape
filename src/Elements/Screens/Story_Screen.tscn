@@ -139,16 +139,16 @@ margin_top = 10.0
 margin_right = 790.0
 margin_bottom = 510.0
 bbcode_enabled = true
-bbcode_text = "[center]It's the year [color=yellow]203X[/color][/center]
+bbcode_text = "[center]It's the year 203X[/center]
 [center]AI assistants the primary interface 
-for [color=yellow]all modern computing devices[/color][/center]
-[center][shake level=2][color=red]Cult Leaders[/color][/shake], [shake level=2][color=red]Scam Artists[/color][/shake] and [shake level=2][color=red]Spies[/color][/shake] are using their AI assistants to generate multi-targeted disinformation campaigns,[/center][center]Undermining the public good 
+for all modern computing devices[/center]
+[center][shake level=2][color=red]Cult Leaders[/color][/shake], [shake level=2][color=red]Scam Artists[/color][/shake] and [shake level=2][color=red]Spies[/color][/shake] are using their AI assistants to generate multi-targeted [shake level=2][color=red]disinformation campaigns[/color][/shake],[/center][center]Undermining the public good 
 for their own [shake level=2][color=red]selfish ends[/color][/shake]
 [center]You, the [wave][color=#00FF00]AI HACKER[/color][/wave] are tasked with
 retraining these AI systems to make
 them less effective in a way these
 feckless feinds won't notice until it's too late![/center]
-[rainbow freq=0.05 sat=0.5]MISINFORM THE AI SO THEY CAN'T MISINFORM THE PUBLIC!!![/rainbow]
+[wave][color=#0F0]MISINFORM THE AI SO THEY CAN'T MISINFORM THE PUBLIC!!![/color][/wave]
 "
 visible_characters = 0
 percent_visible = 0.0
